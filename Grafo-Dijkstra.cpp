@@ -73,7 +73,7 @@ bool criaAresta(GRAFO *gr, int vi, int vf, TIPOPESO p){
 }
 
 void imprime(GRAFO *gr){
-	printf("Vértice: %d. Arestas: %d. \n", gr->vertices,gr->arestas);
+	printf("VÃ©rtice: %d. Arestas: %d. \n", gr->vertices,gr->arestas);
 	int i;
 	for(i=0; i<gr->vertices; i++){
 		printf("v%d: ",i);
@@ -244,37 +244,37 @@ int *dijkstra(GRAFO *g, int s){
 int main (void){
 	GRAFO * gr = criaGrafo(6);
 	criaAresta(gr, 0, 1, 1);
-    criaAresta(gr, 0, 2, 4);
+    	criaAresta(gr, 0, 2, 4);
     
-    criaAresta(gr, 1, 0, 1);
-    criaAresta(gr, 1, 2, 4);
-    criaAresta(gr, 1, 3, 2);
+    	criaAresta(gr, 1, 0, 1);
+    	criaAresta(gr, 1, 2, 4);
+    	criaAresta(gr, 1, 3, 2);
 	criaAresta(gr, 1, 4, 7);
 	    
 	criaAresta(gr, 2, 0, 4);
-    criaAresta(gr, 2, 1, 4);
-    criaAresta(gr, 2, 3, 3);
+    	criaAresta(gr, 2, 1, 4);
+    	criaAresta(gr, 2, 3, 3);
 	criaAresta(gr, 2, 4, 5);
 	
 	criaAresta(gr, 3, 1, 2);
-    criaAresta(gr, 3, 2, 3);
-    criaAresta(gr, 3, 4, 4);
+    	criaAresta(gr, 3, 2, 3);
+    	criaAresta(gr, 3, 4, 4);
 	criaAresta(gr, 3, 5, 6);
 	
 	criaAresta(gr, 4, 1, 5);
-    criaAresta(gr, 4, 2, 6);
-    criaAresta(gr, 4, 3, 4);
+    	criaAresta(gr, 4, 2, 6);
+    	criaAresta(gr, 4, 3, 4);
 	criaAresta(gr, 4, 4, 7);
 	
 	criaAresta(gr, 5, 3, 5);
-    criaAresta(gr, 5, 4, 7);
+    	criaAresta(gr, 5, 4, 7);
     
 	
 
 	
-	printf("Matriz de adjacência:\n");
-    imprime(gr);
-    printf("\n");
+	printf("Matriz de adjacÃªncia:\n");
+	imprime(gr);
+    	printf("\n");
 
 	
 	int *r = dijkstra(gr,0);
