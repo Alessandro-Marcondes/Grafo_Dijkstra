@@ -89,13 +89,13 @@ void imprime(GRAFO *gr){
 //Busca por profundidade
 
 void visitaP(GRAFO *g, int u, int *cor){
-	cor[u] = AMARELO;
+	cor[u] = 1;
 	ADJACENCIA *v = g->adj[u].cab;
 	while(v){
-		if(cor[v->vertices] == BRANCO) visitaP(g,v->vertices,cor);
+		if(cor[v->vertices] == 0) visitaP(g,v->vertices,cor);
 		v = v->prox;
 	}
-	cor[u] = VERMELHO;
+	cor[u] = 2;
 }
 
 
@@ -104,10 +104,10 @@ void profundidade(GRAFO *g){
 	
 	int u;
 	for(u=0; u<g->vertices; u++){
-		cor[u] = BRANCO;
+		cor[u] = 0;
 	}
 	for (u=0; u<g->vertices; u++){
-		if (cor[u] == BRANCO)
+		if (cor[u] == 0)
 		visitaP(g,u,cor);
 	}
 }
